@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 eur_aud = pd.read_csv("..\DUKASCOPY_EUR_4H_BID\EURAUD_Candlestick_4_h_BID_07.10.2005-20.02.2021.csv")
 
@@ -35,3 +34,6 @@ eur_try= pd.read_csv("..\DUKASCOPY_EUR_4H_BID\EURTRY_Candlestick_4_h_BID_13.03.2
 
 eur_usd = pd.read_csv("..\DUKASCOPY_EUR_4H_BID\EURUSD_Candlestick_4_h_BID_04.05.2003-20.02.2021.csv")
 
+currencies_list = [eur_aud, eur_cad, eur_chf, eur_czk, eur_dkk, eur_gbp, eur_hkd,\
+                   eur_huf, eur_jpy, eur_nok, eur_nzd, eur_pln, eur_rub, eur_sek,\
+                   eur_sgd, eur_try, eur_usd]
