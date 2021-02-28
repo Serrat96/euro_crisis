@@ -32,7 +32,9 @@ eur_sgd = pd.read_csv("..\DUKASCOPY_EUR_4H_BID\EURSGD_Candlestick_4_h_BID_13.03.
 
 eur_try= pd.read_csv("..\DUKASCOPY_EUR_4H_BID\EURTRY_Candlestick_4_h_BID_13.03.2007-20.02.2021.csv")
 
-eur_usd = pd.read_csv("..\DUKASCOPY_EUR_4H_BID\EURUSD_Candlestick_4_h_BID_04.05.2003-20.02.2021.csv")
+#eur_usd = pd.read_csv("..\DUKASCOPY_EUR_4H_BID\EURUSD_Candlestick_4_h_BID_04.05.2003-20.02.2021.csv")
+
+eur_usd = pd.read_csv("..\DUKASCOPY_EUR_DAILY_BID\EURUSD_Candlestick_1_D_BID_04.05.2003-20.02.2021.csv")
 
 currencies_list = [eur_aud, eur_cad, eur_chf, eur_czk, eur_dkk, eur_gbp, eur_hkd,\
                    eur_huf, eur_jpy, eur_nok, eur_nzd, eur_pln, eur_rub, eur_sek,\
