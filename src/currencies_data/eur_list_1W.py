@@ -34,6 +34,6 @@ eur_try_weekly = pd.read_csv("https://raw.githubusercontent.com/Serrat96/Dukasco
 
 eur_usd_weekly = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1W_BID/EURUSD_Candlestick_1_W_BID_04.05.2003-27.02.2021.csv")
 
-currencies_list_weekly = [eur_aud_weekly, eur_cad_weekly, eur_chf_weekly, eur_czk_weekly, eur_dkk_weekly, eur_gbp_weekly, eur_hkd_weekly,\
+currencies_list_1w = [eur_aud_weekly, eur_cad_weekly, eur_chf_weekly, eur_czk_weekly, eur_dkk_weekly, eur_gbp_weekly, eur_hkd_weekly,\
                    eur_huf_weekly, eur_jpy_weekly, eur_nok_weekly, eur_nzd_weekly, eur_pln_weekly, eur_rub_weekly, eur_sek_weekly,\
                    eur_sgd_weekly, eur_try_weekly, eur_usd_weekly]

@@ -34,6 +34,6 @@ eur_try_daily = pd.read_csv("https://raw.githubusercontent.com/Serrat96/Dukascop
 
 eur_usd_daily = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURUSD_Candlestick_1_D_BID_04.05.2003-20.02.2021.csv")
 
-currencies_list_daily = [eur_aud_daily, eur_cad_daily, eur_chf_daily, eur_czk_daily, eur_dkk_daily, eur_gbp_daily, eur_hkd_daily,\
+currencies_list_1d = [eur_aud_daily, eur_cad_daily, eur_chf_daily, eur_czk_daily, eur_dkk_daily, eur_gbp_daily, eur_hkd_daily,\
                    eur_huf_daily, eur_jpy_daily, eur_nok_daily, eur_nzd_daily, eur_pln_daily, eur_rub_daily, eur_sek_daily,\
                    eur_sgd_daily, eur_try_daily, eur_usd_daily]

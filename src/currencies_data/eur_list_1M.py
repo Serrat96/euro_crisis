@@ -34,6 +34,6 @@ eur_try_monthly = pd.read_csv("https://raw.githubusercontent.com/Serrat96/Dukasc
 
 eur_usd_monthly = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1M_BID/EURUSD_Candlestick_1_m_BID_04.05.2003-27.02.2021.csv")
 
-currencies_list_monthly = [eur_aud_monthly, eur_cad_monthly, eur_chf_monthly, eur_czk_monthly, eur_dkk_monthly, eur_gbp_monthly, eur_hkd_monthly,\
+currencies_list_1m = [eur_aud_monthly, eur_cad_monthly, eur_chf_monthly, eur_czk_monthly, eur_dkk_monthly, eur_gbp_monthly, eur_hkd_monthly,\
                    eur_huf_monthly, eur_jpy_monthly, eur_nok_monthly, eur_nzd_monthly, eur_pln_monthly, eur_rub_monthly, eur_sek_monthly,\
                    eur_sgd_monthly, eur_try_monthly, eur_usd_monthly]
