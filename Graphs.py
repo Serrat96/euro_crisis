@@ -1,19 +1,19 @@
 import plotly.graph_objects as go
 from plotly.offline import plot
 import pandas as pd
-#import src.currencies_data.eur_list_1H as eur1h
+import src.currencies_data.eur_list_1H as eur1h
 import src.currencies_data.eur_list_4H as eur4h
 import src.currencies_data.eur_list_1D as eur1d
-#import src.currencies_data.eur_list_1W as eur1w
+import src.currencies_data.eur_list_1W as eur1w
 import src.currencies_data.eur_list_1M as eur1m
 
-#currencies_list_1h = eur1h.currencies_list_1h
+currencies_list_1h = eur1h.currencies_list_1h
 
 currencies_list_4h = eur4h.currencies_list_4h
 
 currencies_list_1d = eur1d.currencies_list_1d
 
-#currencies_list_1w = eur1w.currencies_list_1w
+currencies_list_1w = eur1w.currencies_list_1w
 
 currencies_list_1m = eur1m.currencies_list_1m
 
@@ -52,8 +52,8 @@ def candlestick_print(x):
         
         plot(fig)
         
-        break
-        
     print('Se han hecho', num, 'gráficas de', len(x), 'posibles')
 
-candlestick_print(currencies_list_1d)
+candlestick_print(currencies_list_1w)
+
+candlestick_print(currencies_list_1m)
