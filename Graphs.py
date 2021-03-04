@@ -31,12 +31,8 @@ def candlestick_print(x):
     
     num = 0
     
-    for i in x:
-    
-        df = pd.DataFrame(i)
+    for df in x:
         
-        
-    
         fig = go.Figure(data=[go.Candlestick(x=df['Gmt time'],#Preguntar si se puede poner fecha aqui o hay que procesar antes
                                              open=df['Open'],
                                              high=df['High'],
@@ -54,6 +50,4 @@ def candlestick_print(x):
         
     print('Se han hecho', num, 'gráficas de', len(x), 'posibles')
 
-candlestick_print(currencies_list_1w)
-
-candlestick_print(currencies_list_1m)
+candlestick_print(currencies_list_1d)
