@@ -1,4 +1,4 @@
-
+import plotly.graph_objects as go
 import pandas as pd
 from datetime import *
 from Constants import *
@@ -14,7 +14,7 @@ def filter_date(time_frame, from_date, to_date):
 
         df.set_index('Gmt time')
 
-        df['Gmt time'] = pd.to_datetime(df['Gmt time'])
+        df['Gmt time'] = pd.to_datetime(df['Gmt time'], format='%d.%m.%Y %H:%M:%S.%f')
 
         mask = (df['Gmt time'] >= datetime.strptime(from_date, '%Y-%m-%d')) & \
                (df['Gmt time'] <= datetime.strptime(to_date, '%Y-%m-%d'))
@@ -46,11 +46,12 @@ def candlestick_print(x):
 
         fig.update_layout(
             title=currencies_list[num],
-            yaxis_title='Price')
+            yaxis_title='Price',
+            yaxis={'title': 'y-axis', 'scaleratio':2})
 
         num += 1
 
-        plot(fig)
+        fig.show()
 
     print('Se han hecho', num, 'gráficas de', len(x), 'posibles')
 
