@@ -49,9 +49,11 @@ def candlestick_print(x):
             yaxis_title='Price',
             yaxis={'title': 'y-axis', 'scaleratio':2})
 
+        fig.update_layout(yaxis_range=[7.4, 7.6])
         num += 1
 
         fig.show()
-
+        if num == 5:
+            break
     print('Se han hecho', num, 'gráficas de', len(x), 'posibles')
 
