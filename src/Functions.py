@@ -4,7 +4,7 @@ from datetime import *
 from Constants import *
 
 
-def filter_date(time_frame, from_date, to_date):
+def dukascopy_filter_date(time_frame, from_date, to_date):
 
     filtered_by_data = []
 
@@ -29,14 +29,16 @@ def filter_date(time_frame, from_date, to_date):
 
         filtered_by_data.append(df)
 
+    print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
+
     return filtered_by_data
 
 
-def candlestick_print(x):
+def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotation_date_2, annotation_text_1, annotation_text_2):
 
     num = 0
 
-    for df in x:
+    for df in dataframe_list:
         fig = go.Figure(
             data=[go.Candlestick(x=df['Gmt time'],
                                  open=df['Open'],
@@ -47,13 +49,63 @@ def candlestick_print(x):
         fig.update_layout(
             title=currencies_list[num],
             yaxis_title='Price',
-            yaxis={'title': 'y-axis', 'scaleratio':2})
+            shapes=[dict(x0=annotation_date_1, x1=annotation_date_1, y0=0, y1=1, xref='x', yref='paper', line_width=2),
+                    dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),
+                    dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2)],
+            annotations=[dict(x=annotation_date_1, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_1),
+                         dict(x=annotation_date_2, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2)])
 
-        fig.update_layout(yaxis_range=[7.4, 7.6])
+        if num == 4:
+
+            fig.update_layout(yaxis_range=[7.4, 7.6])
+
         num += 1
 
         fig.show()
-        if num == 5:
-            break
-    print('Se han hecho', num, 'gráficas de', len(x), 'posibles')
 
+        break
+
+    print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
+
+
+
+
+
+
+def candlestick_print_4_annotations(dataframe_list,
+                                    annotation_date_1, annotation_date_2, annotation_date_3, annotation_date_4,
+                                    annotation_text_1, annotation_text_2, annotation_text_3, annotation_text_4):
+
+    num = 0
+
+    for df in dataframe_list:
+        fig = go.Figure(
+            data=[go.Candlestick(x=df['Gmt time'],
+                                 open=df['Open'],
+                                 high=df['High'],
+                                 low=df['Low'],
+                                 close=df['Close'])])
+
+        fig.update_layout(
+            title=currencies_list[num],
+            yaxis_title='Price',
+            shapes=[dict(x0=annotation_date_1, x1=annotation_date_1, y0=0, y1=1, xref='x', yref='paper', line_width=2),
+                    dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),
+                    dict(x0=annotation_date_3, x1=annotation_date_3, y0=0, y1=1, xref='x', yref='paper', line_width=2),
+                    dict(x0=annotation_date_4, x1=annotation_date_4, y0=0, y1=1, xref='x', yref='paper', line_width=2)],
+            annotations=[dict(x=annotation_date_1, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='right',text=annotation_text_1),
+                         dict(x=annotation_date_2, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2),
+                         dict(x=annotation_date_3, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='right',text=annotation_text_3),
+                         dict(x=annotation_date_4, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_4)])
+
+        if num == 4:
+
+            fig.update_layout(yaxis_range=[7.4, 7.6])
+
+        num += 1
+
+        fig.show()
+
+        break
+
+    print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
