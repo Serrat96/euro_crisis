@@ -5,8 +5,6 @@ eur_aud_1h = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyDa
 eur_cad_1h = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1H_BID/EURCAD_Candlestick_1_h_BID_25.10.2004-20.02.2021.csv")
       
 eur_chf_1h = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1H_BID/EURCHF_Candlestick_1_h_BID_03.08.2003-20.02.2021.csv")
-    
-eur_czk_1h = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1H_BID/EURCZK_Candlestick_1_h_BID_02.01.2017-20.02.2021.csv")
 
 eur_dkk_1h = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1H_BID/EURDKK_Candlestick_1_h_BID_25.10.2004-20.02.2021.csv")
     
@@ -34,6 +32,6 @@ eur_try_1h = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyDa
 
 eur_usd_1h = pd.read_csv("https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1H_BID/EURUSD_Candlestick_1_h_BID_04.05.2003-20.02.2021.csv")
 
-currencies_list_1h = [eur_aud_1h, eur_cad_1h, eur_chf_1h, eur_czk_1h, eur_dkk_1h, eur_gbp_1h, eur_hkd_1h,\
+currencies_list_1h = [eur_aud_1h, eur_cad_1h, eur_chf_1h, eur_dkk_1h, eur_gbp_1h, eur_hkd_1h,\
                    eur_huf_1h, eur_jpy_1h, eur_nok_1h, eur_nzd_1h, eur_pln_1h, eur_rub_1h, eur_sek_1h,\
                    eur_sgd_1h, eur_try_1h, eur_usd_1h]

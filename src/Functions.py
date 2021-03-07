@@ -4,13 +4,13 @@ from datetime import *
 from Constants import *
 
 
-def dukascopy_filter_date(time_frame, from_date, to_date):
+def dukascopy_filter_date(list_of_currencies, from_date, to_date):
 
     filtered_by_data = []
 
     num = 0
 
-    for df in time_frame:
+    for df in list_of_currencies:
 
         df.set_index('Gmt time')
 
@@ -29,7 +29,7 @@ def dukascopy_filter_date(time_frame, from_date, to_date):
 
         filtered_by_data.append(df)
 
-    print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
+    print('Se han filtrado', num, 'dataframes de', len(list_of_currencies), 'posibles')
 
     return filtered_by_data
 
@@ -52,8 +52,8 @@ def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotatio
             shapes=[dict(x0=annotation_date_1, x1=annotation_date_1, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2)],
-            annotations=[dict(x=annotation_date_1, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_1),
-                         dict(x=annotation_date_2, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2)])
+            annotations=[dict(x=annotation_date_1, y=0.95, xref='x', yref='paper', showarrow=False, xanchor='right', text=annotation_text_1),
+                         dict(x=annotation_date_2, y=0.95, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2)])
 
         if num == 4:
 
@@ -66,10 +66,6 @@ def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotatio
         break
 
     print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
-
-
-
-
 
 
 def candlestick_print_4_annotations(dataframe_list,
@@ -93,10 +89,10 @@ def candlestick_print_4_annotations(dataframe_list,
                     dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_3, x1=annotation_date_3, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_4, x1=annotation_date_4, y0=0, y1=1, xref='x', yref='paper', line_width=2)],
-            annotations=[dict(x=annotation_date_1, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='right',text=annotation_text_1),
-                         dict(x=annotation_date_2, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2),
-                         dict(x=annotation_date_3, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='right',text=annotation_text_3),
-                         dict(x=annotation_date_4, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_4)])
+            annotations=[dict(x=annotation_date_1, y=0.95, xref='x', yref='paper', showarrow=False, xanchor='right',text=annotation_text_1),
+                         dict(x=annotation_date_2, y=0.01, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2),
+                         dict(x=annotation_date_3, y=0.95, xref='x', yref='paper', showarrow=False, xanchor='right',text=annotation_text_3),
+                         dict(x=annotation_date_4, y=0.01, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_4)])
 
         if num == 4:
 
