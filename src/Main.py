@@ -31,4 +31,4 @@ candlestick_print_2_annotations(crisis_covid,
                                 '2020-02-01', '2020-09-01',
                                 'Inicio crisis COVID-19', 'Fin crisis COVID-19')"""
 
-correlation_dataframe(crisis_2008)
+correlation_dataframe(european_debt_2012)

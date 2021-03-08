@@ -34,6 +34,27 @@ def dukascopy_filter_date(list_of_currencies, from_date, to_date):
     return filtered_by_data
 
 
+def correlation_dataframe(filtered_dataframes):
+
+    ctrl = 0
+
+    corr_df = pd.DataFrame()
+
+    column_selected_df_list = []
+
+    for df in filtered_dataframes:
+
+        column_selected_df_list.append(df[['Open']])
+
+    corr_df = pd.concat(column_selected_df_list, axis=1)
+
+    ctrl += 1
+
+    print(corr_df.tail())
+
+    return corr_df
+
+
 def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotation_date_2, annotation_text_1, annotation_text_2):
 
     num = 0
