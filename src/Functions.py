@@ -2,6 +2,8 @@ import plotly.graph_objects as go
 import pandas as pd
 from datetime import *
 from Constants import *
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 def dukascopy_filter_date(list_of_currencies, from_date, to_date):
@@ -36,21 +38,23 @@ def dukascopy_filter_date(list_of_currencies, from_date, to_date):
 
 def correlation_dataframe(filtered_dataframes):
 
-    ctrl = 0
-
-    corr_df = pd.DataFrame()
-
     column_selected_df_list = []
 
     for df in filtered_dataframes:
 
-        column_selected_df_list.append(df[['Open']])
+        df = df['Open'].reset_index()
+
+        column_selected_df_list.append(df['Open'])
 
     corr_df = pd.concat(column_selected_df_list, axis=1)
 
-    ctrl += 1
+    df_small = corr_df.iloc[:, :]
 
-    print(corr_df.tail())
+    correlation_map = df_small.corr()
+
+    sns.heatmap(correlation_map, cmap=sns.diverging_palette(13, 100, as_cmap=True))
+
+    plt.show()
 
     return corr_df
 
