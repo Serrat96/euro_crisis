@@ -31,5 +31,10 @@ candlestick_print_2_annotations(crisis_covid,
                                 '2020-02-01', '2020-09-01',
                                 'Inicio crisis COVID-19', 'Fin crisis COVID-19')"""
 
-correlation_dataframe(european_debt_2012)
+correlation_dataframe(crisis_2008, "Correlación entre monedas crisis bancaria 2008")
 
+#correlation_dataframe(european_debt_2012, 'Correlación entre monedas crisis deuda europea 2012')
+
+#correlation_dataframe(corralito_2013, "Correlación entre monedas corralito Chipre 2013")
+
+#correlation_dataframe(crisis_covid, "Correlación entre monedas crisis COVID-19")

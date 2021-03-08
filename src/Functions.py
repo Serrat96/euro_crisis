@@ -36,7 +36,7 @@ def dukascopy_filter_date(list_of_currencies, from_date, to_date):
     return filtered_by_data
 
 
-def correlation_dataframe(filtered_dataframes):
+def correlation_dataframe(filtered_dataframes, graph_title):
 
     column_selected_df_list = []
 
@@ -58,11 +58,13 @@ def correlation_dataframe(filtered_dataframes):
 
     correlation_map = df_small.corr()
 
-    sns.heatmap(correlation_map, cmap=sns.diverging_palette(13, 100, as_cmap=True))
+    ax = plt.axes()
+
+    sns.heatmap(correlation_map, ax=ax, annot=True, cmap=sns.diverging_palette(13, 100, as_cmap=True))
+
+    plt.text(0,-0.5,graph_title, fontsize = 20, color='Black', fontstyle='normal')
 
     plt.show()
-
-    return corr_df
 
 
 def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotation_date_2, annotation_text_1, annotation_text_2):
