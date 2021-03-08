@@ -40,11 +40,17 @@ def correlation_dataframe(filtered_dataframes):
 
     column_selected_df_list = []
 
+    i = 0
+
     for df in filtered_dataframes:
 
-        df = df['Open'].reset_index()
+        df = df.rename(columns={'Open': currencies_list[i]})
 
-        column_selected_df_list.append(df['Open'])
+        df = df.reset_index(drop=True)
+
+        column_selected_df_list.append(df[currencies_list[i]])
+
+        i += 1
 
     corr_df = pd.concat(column_selected_df_list, axis=1)
 
