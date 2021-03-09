@@ -4,7 +4,8 @@ from datetime import *
 from Constants import *
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+import numpy as np
+import matplotlib
 
 def dukascopy_filter_date(list_of_currencies, from_date, to_date):
 
@@ -60,9 +61,14 @@ def correlation_dataframe(filtered_dataframes, graph_title):
 
     ax = plt.axes()
 
-    sns.heatmap(correlation_map, ax=ax, annot=True, cmap=sns.color_palette('coolwarm', as_cmap=True))
+    mask = np.triu(np.ones_like(correlation_map, dtype=bool))
 
-    plt.text(0, -0.2, graph_title, fontsize = 20, color='Black', fontstyle='normal')
+    cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", colors)
+
+    sns.heatmap(correlation_map, vmin=-1, vmax=1, mask=mask, ax=ax, annot=True, linewidths = 1.5,
+                cmap=cmap, annot_kws={'size': 30})
+
+    plt.text(0, -0.5, graph_title, fontsize = 20, color='Black', fontstyle='normal')
 
     plt.show()
 

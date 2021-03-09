@@ -6,18 +6,18 @@ el período más adecuado"""
 
 crisis_2008 = dukascopy_filter_date(eur1d.currencies_list_1d, '2007-01-01', '2009-12-01')
 
-european_debt_2012 = dukascopy_filter_date(eur1d.currencies_list_1d, '2009-10-01', '2013-01-01')
+"""european_debt_2012 = dukascopy_filter_date(eur1d.currencies_list_1d, '2009-10-01', '2013-01-01')
 
 corralito_2013 = dukascopy_filter_date(eur1d.currencies_list_1d, '2012-02-01', '2013-06-01')
 
-crisis_covid = dukascopy_filter_date(eur1d.currencies_list_1d, '2020-01-01', '2020-10-30')
+crisis_covid = dukascopy_filter_date(eur1d.currencies_list_1d, '2020-01-01', '2020-10-30')"""
 
-"""candlestick_print_2_annotations(crisis_2008,
+candlestick_print_2_annotations(crisis_2008,
                                 '2007-08-01', '2009-06-01',
                                 'Comienza la desconfianza', 'Termina la desconfianza')
 
 
-candlestick_print_4_annotations(european_debt_2012,
+"""candlestick_print_4_annotations(european_debt_2012,
                                 '2010-04-21', '2010-05-02', '2011-07-21', '2012-02-21',
                                 'Inicio negociaciones 1er rescate Grecia', 'Concesion 1er rescate Grecia',
                                 'Inicio negociaciones 2do rescate Grecia', 'Concesion 2do rescate Grecia',)
