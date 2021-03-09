@@ -3,47 +3,11 @@ import pandas as pd
 eur_aud_daily = pd.read_csv(
     "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURAUD_Candlestick_1_D_BID_07.10.2005-20.02.2021.csv")
 
-eur_cad_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURCAD_Candlestick_1_D_BID_25.10.2004-20.02.2021.csv")
-
-eur_chf_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURCHF_Candlestick_1_D_BID_03.08.2003-20.02.2021.csv")
-
-eur_dkk_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURDKK_Candlestick_1_D_BID_25.10.2004-20.02.2021.csv")
-
 eur_gbp_daily = pd.read_csv(
     "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURGBP_Candlestick_1_D_BID_03.08.2003-20.02.2021.csv")
 
-eur_hkd_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURHKD_Candlestick_1_D_BID_03.08.2003-20.02.2021.csv")
-
-eur_huf_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURHUF_Candlestick_1_D_BID_14.03.2007-20.02.2021.csv")
-
 eur_jpy_daily = pd.read_csv(
     "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURJPY_Candlestick_1_D_BID_03.08.2003-20.02.2021.csv")
-
-eur_nok_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURNOK_Candlestick_1_D_BID_25.10.2004-20.02.2021.csv")
-
-eur_nzd_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURNZD_Candlestick_1_D_BID_02.01.2006-20.02.2021.csv")
-
-eur_pln_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURPLN_Candlestick_1_D_BID_14.03.2007-20.02.2021.csv")
-
-eur_rub_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURRUB_Candlestick_1_D_BID_13.03.2007-20.02.2021.csv")
-
-eur_sek_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURSEK_Candlestick_1_D_BID_27.10.2004-20.02.2021.csv")
-
-eur_sgd_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURSGD_Candlestick_1_D_BID_13.03.2007-20.02.2021.csv")
-
-eur_try_daily = pd.read_csv(
-    "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURTRY_Candlestick_1_D_BID_13.03.2007-20.02.2021.csv")
 
 eur_usd_daily = pd.read_csv(
     "https://raw.githubusercontent.com/Serrat96/DukascopyData/master/DUKASCOPY_EUR_1D_BID/EURUSD_Candlestick_1_D_BID_04.05.2003-20.02.2021.csv")
