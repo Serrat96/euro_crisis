@@ -60,9 +60,9 @@ def correlation_dataframe(filtered_dataframes, graph_title):
 
     ax = plt.axes()
 
-    sns.heatmap(correlation_map, ax=ax, annot=True, cmap=sns.diverging_palette(13, 100, as_cmap=True))
+    sns.heatmap(correlation_map, ax=ax, annot=True, cmap=sns.color_palette('coolwarm', as_cmap=True))
 
-    plt.text(0,-0.5,graph_title, fontsize = 20, color='Black', fontstyle='normal')
+    plt.text(0, -0.2, graph_title, fontsize = 20, color='Black', fontstyle='normal')
 
     plt.show()
 
@@ -82,6 +82,7 @@ def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotatio
         fig.update_layout(
             title=currencies_list[num],
             yaxis_title='Price',
+            xaxis_rangeslider_visible=False,
             shapes=[dict(x0=annotation_date_1, x1=annotation_date_1, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2)],
@@ -95,8 +96,6 @@ def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotatio
         num += 1
 
         fig.show()
-
-        break
 
     print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
 
@@ -118,6 +117,7 @@ def candlestick_print_4_annotations(dataframe_list,
         fig.update_layout(
             title=currencies_list[num],
             yaxis_title='Price',
+            xaxis_rangeslider_visible=False,
             shapes=[dict(x0=annotation_date_1, x1=annotation_date_1, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_3, x1=annotation_date_3, y0=0, y1=1, xref='x', yref='paper', line_width=2),
@@ -134,7 +134,5 @@ def candlestick_print_4_annotations(dataframe_list,
         num += 1
 
         fig.show()
-
-        break
 
     print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
