@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib
 
+
 def dukascopy_filter_date(list_of_currencies, from_date, to_date):
 
     filtered_by_data = []
@@ -68,7 +69,7 @@ def correlation_dataframe(filtered_dataframes, graph_title):
     sns.heatmap(correlation_map, vmin=-1, vmax=1, mask=mask, ax=ax, annot=True, linewidths = 1.5,
                 cmap=cmap, annot_kws={'size': 30})
 
-    plt.text(0, -0.5, graph_title, fontsize = 20, color='Black', fontstyle='normal')
+    plt.text(0, 0.1, graph_title, fontsize = 20, color='Black', fontstyle='normal')
 
     plt.show()
 
