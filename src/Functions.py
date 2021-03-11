@@ -88,17 +88,51 @@ def candlestick_print_2_annotations(dataframe_list, annotation_date_1, annotatio
 
         fig.update_layout(
             title=currencies_list[num],
-            xaxis=dict(tickfont=dict(size=30)),
-            yaxis=dict(tickfont=dict(size=30)),
+            xaxis=dict(tickfont=dict(size=25)),
+            yaxis=dict(tickfont=dict(size=25)),
+            xaxis_rangeslider_visible=False,
+            title_font_size=60,
+            shapes=[dict(x0=annotation_date_1, x1=annotation_date_1, y0=0, y1=1, xref='x', yref='paper', line_width=2),
+                    dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),],
+            annotations=[dict(x=annotation_date_1, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='right', text=annotation_text_1),
+                         dict(x=annotation_date_2, y=0.05   , xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2)])
+
+        fig.update_annotations(font_size=25)
+
+        num += 1
+
+        fig.show()
+
+    print('Se han hecho', num, 'gráficas de', len(dataframe_list), 'posibles')
+
+
+def candlestick_print_3_annotations(dataframe_list, annotation_date_1, annotation_date_2, annotation_date_3,
+                                    annotation_text_1, annotation_text_2, annotation_text_3):
+
+    num = 0
+
+    for df in dataframe_list:
+        fig = go.Figure(
+            data=[go.Candlestick(x=df['Gmt time'],
+                                 open=df['Open'],
+                                 high=df['High'],
+                                 low=df['Low'],
+                                 close=df['Close'])])
+
+        fig.update_layout(
+            title=currencies_list[num],
+            xaxis=dict(tickfont=dict(size=25)),
+            yaxis=dict(tickfont=dict(size=25)),
             xaxis_rangeslider_visible=False,
             title_font_size=60,
             shapes=[dict(x0=annotation_date_1, x1=annotation_date_1, y0=0, y1=1, xref='x', yref='paper', line_width=2),
                     dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2),
-                    dict(x0=annotation_date_2, x1=annotation_date_2, y0=0, y1=1, xref='x', yref='paper', line_width=2)],
+                    dict(x0=annotation_date_3, x1=annotation_date_3, y0=0, y1=1, xref='x', yref='paper', line_width=2)],
             annotations=[dict(x=annotation_date_1, y=0.95, xref='x', yref='paper', showarrow=False, xanchor='right', text=annotation_text_1),
-                         dict(x=annotation_date_2, y=0.95, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_2)])
+                         dict(x=annotation_date_2, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='right', text=annotation_text_2),
+                         dict(x=annotation_date_3, y=0.05, xref='x', yref='paper', showarrow=False, xanchor='left', text=annotation_text_3)])
 
-        fig.update_annotations(font_size=30)
+        fig.update_annotations(font_size=25)
 
         num += 1
 
